@@ -1,12 +1,14 @@
 import React, {
   Component,
+  PropTypes,
+} from 'react';
+import {
   View,
   StyleSheet,
   ScrollView,
   DeviceEventEmitter,
   Dimensions,
   LayoutAnimation,
-  PropTypes,
   TouchableOpacity
 } from 'react-native';
 
