@@ -1,14 +1,17 @@
 import React, {
+  Component,
+  PropTypes,
+} from 'react';
+import {
   DatePickerIOS,
   PickerIOS,
   View,
   Text,
   TouchableOpacity,
-  Component,
   StyleSheet,
-  PropTypes,
   Dimensions
 } from 'react-native'
+
 
 const { width: screenWidth } = Dimensions.get('window');
 
