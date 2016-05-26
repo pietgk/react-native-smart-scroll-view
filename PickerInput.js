@@ -1,9 +1,11 @@
 import React, {
-  Text,
   Component,
   PropTypes,
+} from 'react';
+import {
+  Text,
   View
-} from 'react-native'
+} from 'react-native';
 
 class PickerInput extends Component {
 
