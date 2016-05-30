@@ -2,7 +2,7 @@ import React, {
   Component,
   PropTypes,
 } from 'react';
-import {
+import ReactNative, {
   View,
   StyleSheet,
   ScrollView,
@@ -113,6 +113,9 @@ class SmartScrollView extends Component {
 
   _focusField (ref, forced) {
     const node            = this[ref];
+    if(node === undefined) {
+      return;
+    }
     const { type }        = node.props.smartScrollOptions;
     const strippedBackRef = ref.slice('input_'.length);
 
@@ -131,8 +134,8 @@ class SmartScrollView extends Component {
           this._dismissPicker();
           this.setState({scrollWindowHeight:this.state.originalHeight});
           break;
-        this.props.onRefFocus(strippedBackRef);
       }
+      // this.props.onRefFocus(strippedBackRef);
       setTimeout(this._focusNode, 1)
     })
   }
@@ -143,7 +146,7 @@ class SmartScrollView extends Component {
       props: { scrollPadding },
       _smartScroll
     }                     = this;
-    const num             = React.findNodeHandle(_smartScroll);
+    const num             = ReactNative.findNodeHandle(_smartScroll);
 
     setTimeout(() => {
       this['input_'+ref].measureLayout(num, (X,Y,W,H) => {
